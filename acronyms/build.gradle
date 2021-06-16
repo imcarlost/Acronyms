@@ -1,0 +1,9 @@
+apply from: '../versions.gradle'
+apply from: '../base.gradle'
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+  implementation project(':core')
+}
