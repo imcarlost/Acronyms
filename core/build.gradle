@@ -14,6 +14,7 @@ dependencies {
   api deps.google.androidx.recycler_view
   api deps.google.androidx.navigation_fragment
   api deps.google.androidx.navigation_ui
+  api deps.google.material.core
   api deps.core.okhttp.logging_interceptor
   api deps.core.retrofit.runtime
   api deps.core.retrofit.gson
