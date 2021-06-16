@@ -1,5 +1,5 @@
 apply from: '../versions.gradle'
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
@@ -8,28 +8,9 @@ android {
   buildToolsVersion build_versions.build_tools
 
   defaultConfig {
-    applicationId "dev.carlos.acronyms"
     minSdkVersion build_versions.min_sdk
     targetSdkVersion build_versions.target_sdk
-    versionCode 1
-    versionName "1.0"
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-    buildConfigField "String", "BASE_ENDPOINT", '"http://www.nactem.ac.uk/software/acromine/"'
-  }
-
-  buildTypes {
-    debug {
-      applicationIdSuffix '.debug'
-      debuggable true
-      signingConfig signingConfigs.debug
-    }
-    release {
-      debuggable false
-      minifyEnabled true
-      signingConfig signingConfigs.debug
-      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-    }
   }
 
   compileOptions {
@@ -56,5 +37,5 @@ android {
 }
 
 dependencies {
-  implementation project(":core")
+  kapt deps.core.room.compiler
 }
