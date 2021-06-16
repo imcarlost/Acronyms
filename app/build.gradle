@@ -1,10 +1,7 @@
-plugins {
-  id 'com.android.application'
-  id 'kotlin-android'
-  id 'kotlin-kapt'
-}
-
 apply from: '../versions.gradle'
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
   compileSdkVersion build_versions.target_sdk
@@ -50,6 +47,11 @@ android {
 
   lintOptions {
     abortOnError false
+  }
+
+  buildFeatures {
+    viewBinding true
+    dataBinding true
   }
 }
 
