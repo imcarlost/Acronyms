@@ -1,39 +1,60 @@
+apply from: '../versions.gradle'
+
 plugins {
   id 'com.android.application'
   id 'kotlin-android'
+  id 'kotlin-android-extensions'
+  id 'kotlin-kapt'
 }
 
 android {
-  compileSdkVersion 30
-  buildToolsVersion "30.0.3"
+  compileSdkVersion build_versions.target_sdk
+  buildToolsVersion build_versions.build_tools
 
   defaultConfig {
     applicationId "dev.carlos.acronyms"
-    minSdkVersion 21
-    targetSdkVersion 30
+    minSdkVersion build_versions.min_sdk
+    targetSdkVersion build_versions.target_sdk
     versionCode 1
     versionName "1.0"
-
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    buildConfigField "String", "BASE_ENDPOINT", '"http://www.nactem.ac.uk/software/acromine/"'
   }
 
   buildTypes {
+    debug {
+      applicationIdSuffix '.debug'
+      debuggable true
+      signingConfig signingConfigs.debug
+    }
     release {
-      minifyEnabled false
+      debuggable false
+      minifyEnabled true
+      signingConfig signingConfigs.debug
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
   }
+
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
   }
+
   kotlinOptions {
-    jvmTarget = '1.8'
+    jvmTarget = JavaVersion.VERSION_1_8.toString()
+  }
+
+  testOptions {
+    unitTests.returnDefaultValues = true
+  }
+
+  lintOptions {
+    abortOnError false
   }
 }
 
 dependencies {
-
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
   implementation 'androidx.core:core-ktx:1.3.1'
   implementation 'androidx.appcompat:appcompat:1.2.0'
