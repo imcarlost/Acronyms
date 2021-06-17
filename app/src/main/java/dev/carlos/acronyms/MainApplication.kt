@@ -1,7 +1,7 @@
 package dev.carlos.acronyms
 
 import android.app.Application
-import dev.carlos.shortform.di.acronymsModule
+import dev.carlos.shortform.di.shortformModule
 import dev.carlos.acronyms.di.appModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -26,7 +26,7 @@ class MainApplication : Application() {
             modules(
                 listOf(
                     appModules,
-                    acronymsModule
+                    shortformModule
                 )
             )
         }

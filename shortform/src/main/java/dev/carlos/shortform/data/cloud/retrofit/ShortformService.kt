@@ -5,7 +5,7 @@ import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface AcronymsService {
+interface ShortformService {
     @GET("/software/acromine/dictionary.py")
-    fun getAcronymDefinition(@Query("sf") acronym: String): Single<List<ShortformRemote>>
+    fun getShortformDefinition(@Query("sf") acronym: String): Single<List<ShortformRemote>>
 }

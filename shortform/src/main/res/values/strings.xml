@@ -1,3 +1,5 @@
 <resources>
-  <string name="app_name">acronyms</string>
+  <string name="item_longform_since">Desde %1$d</string>
+  <string name="shortform_definition_search">Buscar acrónimo</string>
+  <string name="shortform_definition_no_definition">No existe una definición</string>
 </resources>
