@@ -1,6 +1,7 @@
 package dev.carlos.shortform.feature
 
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,6 +44,27 @@ class ShortformFragment : Fragment() {
         viewModel.acronymDefinition.observeNonNull(this) {
             handleResult(it)
         }
+
+        binding.shortformDefinitionSearchField.setOnKeyListener(object : View.OnKeyListener {
+            override fun onKey(v: View?, keyCode: Int, event: KeyEvent): Boolean {
+                if (event.action == KeyEvent.ACTION_DOWN &&
+                    keyCode == KeyEvent.KEYCODE_ENTER
+                ) {
+                    onSearch()
+                    return true
+                }
+                return false
+            }
+        })
+    }
+
+    private fun onSearch() {
+        fetchAcronym(binding.shortformDefinitionSearchField.text.toString())
+        binding.shortformDefinitionRecycler.requestFocus()
+    }
+
+    private fun fetchAcronym(acronym: String) {
+        viewModel.fetchAcronymDefinition(acronym)
     }
 
     private fun handleResult(state: RequestState) {
