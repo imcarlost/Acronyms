@@ -5,18 +5,18 @@ import dev.carlos.core.domain.network.RequestError
 import dev.carlos.core.domain.network.RequestState
 import dev.carlos.core.viewmodel.RxViewModel
 import dev.carlos.shortform.data.models.ShortformModel
-import dev.carlos.shortform.domain.GetAcronymDefinition
+import dev.carlos.shortform.domain.GetShortformDefinition
 import retrofit2.HttpException
 import java.net.UnknownHostException
 
-class AcronymsViewmodel(
-    private val GetAcronymsDefinition: GetAcronymDefinition
+class ShortformViewmodel(
+    private val getAcronymsDefinition: GetShortformDefinition
 ) : RxViewModel() {
 
     val acronymDefinition = MutableLiveData<RequestState>()
 
     fun fetchAcronymDefinition(acronym: String) {
-        val disposable = GetAcronymsDefinition.getAcronymDefinition(acronym)
+        val disposable = getAcronymsDefinition.getShortformDefinition(acronym)
             .doOnSubscribe { acronymDefinition.postValue(RequestState.Loading) }
             .subscribe(::handleSuccess, ::handleError)
         compositeDisposable.add(disposable)
