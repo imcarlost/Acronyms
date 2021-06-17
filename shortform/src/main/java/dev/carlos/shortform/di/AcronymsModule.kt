@@ -9,6 +9,8 @@ import dev.carlos.shortform.data.cloud.retrofit.AcronymsRemoteDatasource
 import dev.carlos.shortform.data.cloud.retrofit.AcronymsService
 import dev.carlos.shortform.domain.AcronymsRepository
 import dev.carlos.shortform.domain.GetAcronymDefinition
+import dev.carlos.shortform.viewmodels.AcronymsViewmodel
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val acronymsModule = module {
@@ -22,4 +24,6 @@ val acronymsModule = module {
     factory<AcronymsRepository> { AcronymsDataRepository(get()) }
 
     factory { GetAcronymDefinition(get(), get()) }
+
+    viewModel { AcronymsViewmodel(get()) }
 }

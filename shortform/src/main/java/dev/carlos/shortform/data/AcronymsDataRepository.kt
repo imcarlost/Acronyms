@@ -11,6 +11,6 @@ class AcronymsDataRepository(
 ) : AcronymsRepository {
 
     override fun getAcronymDefinition(acronym: String): Single<ShortformModel> {
-        return remoteDatasource.getAcronymDefinition(acronym).map { it.single()?.toShortformModel() }
+        return remoteDatasource.getAcronymDefinition(acronym).map { it.single().toShortformModel() }
     }
 }
