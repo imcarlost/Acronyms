@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     >
 
-  <androidx.fragment.app.FragmentContainerView
+  <!-- Still usign fragment because of this [https://issuetracker.google.com/issues/142847973] -->
+  <fragment
       android:id="@+id/main_fragment_container"
       android:name="androidx.navigation.fragment.NavHostFragment"
       android:layout_width="match_parent"

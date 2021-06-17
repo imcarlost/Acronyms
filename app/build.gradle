@@ -2,6 +2,7 @@ apply from: '../versions.gradle'
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-parcelize'
 
 android {
   compileSdkVersion build_versions.target_sdk
@@ -15,7 +16,7 @@ android {
     versionName "1.0"
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-    buildConfigField "String", "BASE_ENDPOINT", '"http://www.nactem.ac.uk/software/acromine/"'
+    buildConfigField "String", "BASE_ENDPOINT", '"http://www.nactem.ac.uk"'
   }
 
   buildTypes {
@@ -57,5 +58,5 @@ android {
 
 dependencies {
   implementation project(":core")
-  implementation project(":acronyms")
+  implementation project(':shortform')
 }
