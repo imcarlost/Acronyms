@@ -18,10 +18,11 @@ versions.timber = "4.7.1"
 versions.koin = "2.2.3"
 versions.rx_core = "2.2.21"
 versions.rx_android = "2.1.1"
-versions.junit = "4.13.2"
-versions.test = "1.3.0"
-versions.test_ext = "1.1.2"
-versions.espresso = "3.3.0"
+versions.junit = "4.13"
+versions.test = "1.2.0"
+versions.test_ext = "1.1.1"
+versions.espresso = "3.2.0"
+versions.fragments = "1.2.0"
 
 def build_versions = [:]
 build_versions.min_sdk = 21
@@ -105,8 +106,9 @@ testing.core = "androidx.test:core:$versions.test"
 testing.rules = "androidx.test:rules:$versions.test"
 testing.runner = "androidx.test:runner:$versions.test"
 testing.ext = "androidx.test.ext:junit:$versions.test_ext"
-testing.koin = "org.koin:koin-test:$versions.koin"
+testing.koin = "io.insert-koin:koin-test:$versions.koin"
 testing.espresso = "androidx.test.espresso:espresso-core:$versions.espresso"
+testing.fragments = "androidx.fragment:fragment-testing:$versions.fragments"
 deps.testing = testing
 
 ext.deps = deps

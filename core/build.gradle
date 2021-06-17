@@ -29,5 +29,14 @@ dependencies {
   api deps.core.rx.android
   api deps.core.thirdparty.timber
 
+  api deps.testing.junit
+  api deps.testing.koin
+  api deps.testing.core
+  api deps.testing.rules
+  api deps.testing.runner
+  api deps.testing.ext
+  api deps.testing.espresso
+  api deps.testing.fragments
+
   kapt deps.core.room.compiler
 }
