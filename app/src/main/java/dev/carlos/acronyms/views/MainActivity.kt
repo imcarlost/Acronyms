@@ -5,15 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import dev.carlos.acronyms.R
-import dev.carlos.acronyms.di.appModules
 import dev.carlos.acronyms.viewmodel.NavigationViewmodel
-import dev.carlos.core.extensions.findNavHostFragment
 import dev.carlos.core.extensions.observeNonNull
 import dev.carlos.core.navigation.NavigationRouter
 import org.koin.android.ext.android.inject
-import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.context.startKoin
 
 class MainActivity : AppCompatActivity() {
 

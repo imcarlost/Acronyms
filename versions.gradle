@@ -11,6 +11,7 @@ versions.androidx_lifecycle = "2.2.0"
 versions.androidx_recycler_view = "1.2.0"
 versions.androidx_navigation = "2.3.5"
 versions.material_core = "1.3.0"
+versions.gson = "2.8.7"
 versions.okhttp_interceptor = "4.9.1"
 versions.retrofit = "2.9.0"
 versions.timber = "4.7.1"
@@ -53,8 +54,12 @@ androidx.navigation_ui = "androidx.navigation:navigation-ui-ktx:$versions.androi
 def material = [:]
 material.core = "com.google.android.material:material:$versions.material_core"
 
+def gson = [:]
+gson.core = "com.google.code.gson:gson:$versions.gson"
+
 def google = [:]
 google.kotlin = kotlin
+google.gson = gson
 google.androidx = androidx
 google.material = material
 deps.google = google

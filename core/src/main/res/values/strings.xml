@@ -1,3 +1,5 @@
 <resources>
-  <string name="app_name">core</string>
+  <string name="network_error_bad_response">Respuesta inesperada</string>
+  <string name="network_error_no_network">Sin conexión</string>
+  <string name="network_error_unknown">Error desconocido</string>
 </resources>
