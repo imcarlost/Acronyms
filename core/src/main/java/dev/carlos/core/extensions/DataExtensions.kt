@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 
 fun <T> LiveData<T>.observeNonNull(owner: LifecycleOwner, func: (T) -> Unit) {
-    observe(owner, Observer {
+    observe(owner, {
         it?.let {
             func(it)
         }
